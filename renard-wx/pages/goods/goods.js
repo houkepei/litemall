@@ -33,7 +33,7 @@ Page({
   // 页面分享
   onShareAppMessage: function (options) {
     let that = this;
-    return {
+    let result= {
       title: that.data.goods.name,
       desc: '唯爱与美食不可辜负',
       path: '/pages/index/index?goodId=' + this.data.id,
@@ -50,12 +50,23 @@ Page({
       // },
       // fail: function (options) {
         
-      // },
-      complete: function (options) {
-      　　　　console.log('ewqewq');
-    　　　　}
+      // }
      
     }
+
+    util.request(api.CouponReceive, {
+      couponId: 1
+    }, 'POST').then(res => {
+      if (res.errno === 0) {
+        // wx.showToast({
+        //   title: "领取成功"
+        // })
+      }
+      // else {
+      //   util.showErrorToast(res.errmsg);
+      // }
+    })
+    return result;
   },
   // onShareAppMessage: function () {
   //   let that = this;
