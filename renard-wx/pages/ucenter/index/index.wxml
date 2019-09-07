@@ -38,5 +38,9 @@
       <navigator url="/pages/select-address/index" hover-class="none">团购说明</navigator>
       <image src="../../../images/right-icon.png" />
     </view>
+    <view class="my-item">
+    <navigator url="/pages/select-address/index" hover-class="none" bindtap='goCoupon'>优惠券</navigator>
+      <image src="../../../images/right-icon.png" />
+    </view>
   </view>
 </view>

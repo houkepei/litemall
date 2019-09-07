@@ -57,7 +57,7 @@ Page({
   goCoupon() {
     if (app.globalData.hasLogin) {
       wx.navigateTo({
-        url: "/pages/ucenter/coupon/coupon"
+        url: "/pages/ucenter/couponList/couponList"
       });
     } else {
       wx.navigateTo({

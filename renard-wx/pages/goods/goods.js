@@ -31,14 +31,40 @@ Page({
   },
 
   // 页面分享
-  onShareAppMessage: function() {
+  onShareAppMessage: function (options) {
     let that = this;
     return {
       title: that.data.goods.name,
       desc: '唯爱与美食不可辜负',
-      path: '/pages/index/index?goodId=' + this.data.id
+      path: '/pages/index/index?goodId=' + this.data.id,
+      // success: function (options) {
+      //   if (options.shareTickets) {
+      //     wx.showToast({
+      //       title: '已经分享到群',
+      //     });
+      //   } else {
+      //     wx.showToast({
+      //       title: '请分享到群',
+      //     });
+      //   }
+      // },
+      // fail: function (options) {
+        
+      // },
+      complete: function (options) {
+      　　　　console.log('ewqewq');
+    　　　　}
+     
     }
   },
+  // onShareAppMessage: function () {
+  //   let that = this;
+  //   return {
+  //     title: that.data.goods.name,
+  //     desc: '唯爱与美食不可辜负',
+  //     path: '/pages/index/index?goodId=' + this.data.id
+  //   }
+  // },
   handleSetting: function(e) {
       var that = this;
       // console.log(e)
@@ -382,6 +408,12 @@ Page({
       this.getGrouponInfo(options.grouponId);
     }
     let that = this;
+
+    wx.showShareMenu({
+      // shareTicket 是获取转发目标群信息的票据，只有拥有 shareTicket 才能拿到群信息，用户每次转发都会生成对应唯一的shareTicket 。
+      withShareTicket: true
+    });
+
     wx.getSetting({
         success: function (res) {
             console.log(res)

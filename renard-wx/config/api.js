@@ -1,8 +1,8 @@
 // 以下是业务服务器API地址
 // 本机开发时使用
-var WxApiRoot = 'http://localhost:8080/wx/';
+// var WxApiRoot = 'http://localhost:8080/wx/';
 // 局域网测试使用
-// var WxApiRoot = 'http://192.168.0.101:8080/wx/';
+var WxApiRoot = 'http://10.10.172.30:8080/wx/';
 // 云平台上线时使用
 // var WxApiRoot = 'https://litemall.menethil.com.cn/wx/';
 // var WxApiRoot = 'https://www.menethil.com.cn/wx/';
@@ -63,6 +63,12 @@ module.exports = {
 
   FootprintList: WxApiRoot + 'footprint/list', //足迹列表
   FootprintDelete: WxApiRoot + 'footprint/delete', //删除足迹
+
+  CouponList: WxApiRoot + 'coupon/list', //优惠券列表
+  CouponMyList: WxApiRoot + 'coupon/mylist', //我的优惠券列表
+  CouponSelectList: WxApiRoot + 'coupon/selectlist', //当前订单可用优惠券列表
+  CouponReceive: WxApiRoot + 'coupon/receive', //优惠券领取
+  CouponExchange: WxApiRoot + 'coupon/exchange', //优惠券兑换
 
   UserFormIdCreate: WxApiRoot + 'formid/create', //用户FromId，用于发送模版消息
 
